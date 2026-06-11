@@ -246,7 +246,7 @@ Supported file types:
 ### Download Document
 
 ```http
-GET /document/{document_id}
+GET /documents/{document_id}
 ```
 
 Downloads a document if the authenticated user has access to the related project.
@@ -256,7 +256,7 @@ Downloads a document if the authenticated user has access to the related project
 ### Update Document
 
 ```http
-PUT /document/{document_id}
+PUT /documents/{document_id}
 ```
 
 Updates an existing document.
@@ -266,7 +266,7 @@ Updates an existing document.
 ### Delete Document
 
 ```http
-DELETE /document/{document_id}
+DELETE /documents/{document_id}
 ```
 
 Deletes a document and removes it from the related project.
