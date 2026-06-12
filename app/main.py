@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from app.api import api
 import uvicorn
-
 app = FastAPI(title="EPAM final project", debug=True)
 app.include_router(api.api_router)
 
