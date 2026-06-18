@@ -1,5 +1,8 @@
 from fastapi import APIRouter
-
+from typing import Annotated
+from fastapi.params import Depends
+from app.core.security import get_current_user
+from app.schemas.user import InDbUser
 router = APIRouter()
 
 @router.post("/projects")
@@ -7,8 +10,11 @@ def projects():
     return {"projects-post": "to be implemented"}
 
 @router.get("/projects")
-def projects():
-    return {"projects-get": "to be implemented"}
+def projects(current_user: Annotated[InDbUser ,Depends(get_current_user)]):
+    return {
+        "message": "You are authorized",
+        "current_user": current_user.login,
+    }
 
 @router.get("/projects/{project_id}/info ")
 def project_info(project_id: int):
