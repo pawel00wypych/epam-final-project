@@ -13,7 +13,7 @@ def projects():
 def projects(current_user: Annotated[InDbUser ,Depends(get_current_user)]):
     return {
         "message": "You are authorized",
-        "current_user": current_user.login,
+        "current_user": current_user.username,
     }
 
 @router.get("/projects/{project_id}/info ")
