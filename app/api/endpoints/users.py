@@ -12,7 +12,8 @@ from app.core.security import (hash_password,
 
 router = APIRouter()
 
-@router.post("/register", response_model=UserPublic, status_code=status.HTTP_201_CREATED)
+@router.post("/auth", response_model=UserPublic,
+             status_code=status.HTTP_201_CREATED)
 def register_user(user_data: AuthModel):
     if user_data.username in users_db:
         raise HTTPException(
