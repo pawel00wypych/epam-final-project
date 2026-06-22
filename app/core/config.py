@@ -6,7 +6,4 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 60
     database_url: str
 
-    class Config:
-        env_file = ".env_dev" # .env for production
-
 settings = Settings()
